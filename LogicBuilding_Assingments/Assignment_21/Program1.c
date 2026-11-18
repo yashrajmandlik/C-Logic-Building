@@ -3,59 +3,46 @@
 
 /////////////////////////////////////////////////////////////////////////////////
 //
-//          Function Name : Percentage
-//          Input         : Total marks and obtained marks
-//          Output        : Percentage of marks obtained
-//          Description   : Calculate and return the percentage based on the
-//                          total marks and obtained marks
-//          Date          : 04/11/2026
+//          Function Name : Pattern
+//          Input         : Number of Rows and Column
+//          Output        : Pattern of integers 
+//          Description   : Print the pattern thats given in question 
+//          Date          : 12/11/2026
 //          Author        : Yashraj Mandlik
 /////////////////////////////////////////////////////////////////////////////////
 
-void Pattern(int iRow, int iCol)
+void pattern(int irow , int col)
 {
-    int iCnt = 0,iCnt1 =0;
+    int i = 0 , j = 0 , icnt = 0;
 
-    for (iCnt = 1; iCnt <= 9; iCnt++)
+    for(i = 1; i<= irow; i++)
     {
-        for(iCnt1 = 1; iCnt1 <= iCol; iCnt1++)
+
+        for(j = 1; j<=col; j++)
         {
-            printf("%d\t",iCnt1);
+            
+           printf("%d\t");
+            
         }
         printf("\n");
     }
-    
 }
 
 /////////////////////////////////////////////////////////////////////////////////
 //
 //          Entry Point Of the application
-//          Accepts total marks and obtained marks, calls Percentage, and
-//          displays the result rounded to the nearest whole percent.
 //
 /////////////////////////////////////////////////////////////////////////////////
 
-int main ()
+int main()
 {
-    int iValue1 = 0,iValue2 = 0;
+    int iValue1 = 0;
+    int iValue2 = 0;
+
+    printf("Enter number of Rows and col :\n");
+    scanf("%d %d",&iValue1,&iValue2);
     
-    printf("Enter number of rows : ");
-    scanf("%d",&iValue1);
-
-    printf("Enter number of columns : ");
-    scanf("%d",&iValue2);
-
     Pattern(iValue1,iValue2);
 
     return EXIT_SUCCESS;
 }
-
-//////////////////////////////////////////////////////////////////////////////////
-//      Test the program
-//
-//      Tested test Cases
-//
-//
-//
-//
-//////////////////////////////////////////////////////////////////////////////////
