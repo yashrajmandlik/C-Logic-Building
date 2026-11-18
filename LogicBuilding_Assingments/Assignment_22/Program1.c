@@ -1,61 +1,27 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include<stdio.h>
+#include<stdlib.h>
 
-/////////////////////////////////////////////////////////////////////////////////
-//
-//          Function Name : Percentage
-//          Input         : Total marks and obtained marks
-//          Output        : Percentage of marks obtained
-//          Description   : Calculate and return the percentage based on the
-//                          total marks and obtained marks
-//          Date          : 04/11/2026
-//          Author        : Yashraj Mandlik
-/////////////////////////////////////////////////////////////////////////////////
-
-void Pattern(int iRow, int iCol)
+void pattern(int iNo)
 {
-    int iCnt = 0,iCnt1 =0;
+    int i = 0;
+    char ch = '\0';
 
-    for (iCnt = 1; iCnt <= 9; iCnt++)
-    {
-        for(iCnt1 = 1; iCnt1 <= iCol; iCnt1++)
-        {
-            printf("%d\t",iCnt1);
-        }
-        printf("\n");
-    }
-    
+   for(i = 1, ch ='A'; i<= iNo; i++,ch++)
+   {
+        printf("%c\t",ch);
+   } 
+   
 }
 
-/////////////////////////////////////////////////////////////////////////////////
-//
-//          Entry Point Of the application
-//          Accepts total marks and obtained marks, calls Percentage, and
-//          displays the result rounded to the nearest whole percent.
-//
-/////////////////////////////////////////////////////////////////////////////////
-
-int main ()
+int main()
 {
-    int iValue1 = 0,iValue2 = 0;
-    
-    printf("Enter number of rows : ");
-    scanf("%d",&iValue1);
 
-    printf("Enter number of columns : ");
-    scanf("%d",&iValue2);
+    int iValue = 0;
 
-    Pattern(iValue1,iValue2);
+    printf("Enter number of elements :\n");
+    scanf("%d",&iValue);
+
+    pattern(iValue);
 
     return EXIT_SUCCESS;
 }
-
-//////////////////////////////////////////////////////////////////////////////////
-//      Test the program
-//
-//      Tested test Cases
-//
-//
-//
-//
-//////////////////////////////////////////////////////////////////////////////////
