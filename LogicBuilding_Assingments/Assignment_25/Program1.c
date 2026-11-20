@@ -1,61 +1,41 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include<stdio.h>
+#include<stdlib.h>
 
-/////////////////////////////////////////////////////////////////////////////////
-//
-//          Function Name : Percentage
-//          Input         : Total marks and obtained marks
-//          Output        : Percentage of marks obtained
-//          Description   : Calculate and return the percentage based on the
-//                          total marks and obtained marks
-//          Date          : 04/11/2026
-//          Author        : Yashraj Mandlik
-/////////////////////////////////////////////////////////////////////////////////
+#define true 1
+#define false 0
 
-void Pattern(int iRow, int iCol)
+typedef int BOOL;
+
+BOOL Chkalpha(char ch)
 {
-    int iCnt = 0,iCnt1 =0;
-
-    for (iCnt = 1; iCnt <= 9; iCnt++)
+    if(ch >= 'A' && ch >= 'Z' || ch>= 'a' && ch >= 'z')
     {
-        for(iCnt1 = 1; iCnt1 <= iCol; iCnt1++)
-        {
-            printf("%d\t",iCnt1);
-        }
-        printf("\n");
+        return true;
     }
-    
+    else
+    {
+        return false;
+    }
 }
 
-/////////////////////////////////////////////////////////////////////////////////
-//
-//          Entry Point Of the application
-//          Accepts total marks and obtained marks, calls Percentage, and
-//          displays the result rounded to the nearest whole percent.
-//
-/////////////////////////////////////////////////////////////////////////////////
-
-int main ()
+int main()
 {
-    int iValue1 = 0,iValue2 = 0;
-    
-    printf("Enter number of rows : ");
-    scanf("%d",&iValue1);
+    char cValue = '\0';
+    BOOL bRet = false;
 
-    printf("Enter number of columns : ");
-    scanf("%d",&iValue2);
+    printf("Enter the character:\n");
+    scanf("%c",&cValue);
 
-    Pattern(iValue1,iValue2);
+    bRet = Chkalpha(cValue);
+
+    if(bRet == true)
+    {
+        printf("it is character");
+    }
+    else
+    {
+        printf("its not character");
+    }
 
     return EXIT_SUCCESS;
 }
-
-//////////////////////////////////////////////////////////////////////////////////
-//      Test the program
-//
-//      Tested test Cases
-//
-//
-//
-//
-//////////////////////////////////////////////////////////////////////////////////
