@@ -1,61 +1,28 @@
-#include <stdio.h>
-#include <stdlib.h>
-
-/////////////////////////////////////////////////////////////////////////////////
-//
-//          Function Name : Percentage
-//          Input         : Total marks and obtained marks
-//          Output        : Percentage of marks obtained
-//          Description   : Calculate and return the percentage based on the
-//                          total marks and obtained marks
-//          Date          : 04/11/2026
-//          Author        : Yashraj Mandlik
-/////////////////////////////////////////////////////////////////////////////////
-
-void Pattern(int iRow, int iCol)
+#include<stdio.h>
+#include<stdlib.h>
+void strlwrx(char *str)
 {
-    int iCnt = 0,iCnt1 =0;
 
-    for (iCnt = 1; iCnt <= 9; iCnt++)
+    while(*str != '\0')
     {
-        for(iCnt1 = 1; iCnt1 <= iCol; iCnt1++)
+        if(*str >= 'A' && *str <= 'Z')
         {
-            printf("%d\t",iCnt1);
+            *str = *str + 32;
         }
-        printf("\n");
+        str++;
     }
-    
 }
 
-/////////////////////////////////////////////////////////////////////////////////
-//
-//          Entry Point Of the application
-//          Accepts total marks and obtained marks, calls Percentage, and
-//          displays the result rounded to the nearest whole percent.
-//
-/////////////////////////////////////////////////////////////////////////////////
-
-int main ()
+int main()
 {
-    int iValue1 = 0,iValue2 = 0;
-    
-    printf("Enter number of rows : ");
-    scanf("%d",&iValue1);
+    char arr[20];
 
-    printf("Enter number of columns : ");
-    scanf("%d",&iValue2);
+    printf("Enter string \n");
+    scanf("%[^'\n']s",arr);
 
-    Pattern(iValue1,iValue2);
+    strlwrx(arr);
+
+    printf("Modified string is %s",arr);
 
     return EXIT_SUCCESS;
 }
-
-//////////////////////////////////////////////////////////////////////////////////
-//      Test the program
-//
-//      Tested test Cases
-//
-//
-//
-//
-//////////////////////////////////////////////////////////////////////////////////
