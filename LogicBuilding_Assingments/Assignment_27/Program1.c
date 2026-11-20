@@ -1,61 +1,32 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include<stdio.h>
+#include<stdlib.h>
 
-/////////////////////////////////////////////////////////////////////////////////
-//
-//          Function Name : Percentage
-//          Input         : Total marks and obtained marks
-//          Output        : Percentage of marks obtained
-//          Description   : Calculate and return the percentage based on the
-//                          total marks and obtained marks
-//          Date          : 04/11/2026
-//          Author        : Yashraj Mandlik
-/////////////////////////////////////////////////////////////////////////////////
-
-void Pattern(int iRow, int iCol)
+int Countcapital(char *str)
 {
-    int iCnt = 0,iCnt1 =0;
+    int icnt = 0;
 
-    for (iCnt = 1; iCnt <= 9; iCnt++)
+    while(*str != '\0')
     {
-        for(iCnt1 = 1; iCnt1 <= iCol; iCnt1++)
+        if(*str >= 'A' && *str <= 'Z')
         {
-            printf("%d\t",iCnt1);
+            icnt++;
         }
-        printf("\n");
+        str++;
     }
-    
+    return icnt;
 }
 
-/////////////////////////////////////////////////////////////////////////////////
-//
-//          Entry Point Of the application
-//          Accepts total marks and obtained marks, calls Percentage, and
-//          displays the result rounded to the nearest whole percent.
-//
-/////////////////////////////////////////////////////////////////////////////////
-
-int main ()
+int main()
 {
-    int iValue1 = 0,iValue2 = 0;
-    
-    printf("Enter number of rows : ");
-    scanf("%d",&iValue1);
+    char arr[20];
+    int iRet = 0;
 
-    printf("Enter number of columns : ");
-    scanf("%d",&iValue2);
+    printf("Enter string :\n");
+    scanf("%[^'\n']s",arr);
 
-    Pattern(iValue1,iValue2);
+    iRet = Countcapital(arr);
+
+    printf("%d",iRet);
 
     return EXIT_SUCCESS;
 }
-
-//////////////////////////////////////////////////////////////////////////////////
-//      Test the program
-//
-//      Tested test Cases
-//
-//
-//
-//
-//////////////////////////////////////////////////////////////////////////////////
